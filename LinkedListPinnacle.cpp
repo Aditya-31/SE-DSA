@@ -1,3 +1,14 @@
+/*Department of Computer Engineering has student's club named 'Pinnacle Club'. Students of
+Second, third and final year of department can be granted membership on request. Similarly
+one may cancel the membership of club. First node is reserved for president of club and last
+node is reserved for secretary of club. Write C++ program to maintain club member‘s
+information using singly linked list. Store student PRN and Name. Write functions to
+a) Add and delete the members as well as president or even secretary.
+b) Compute total number of members of club
+c) Display members
+//NOT DONE YETd) Display list in reverse order using recursion
+e) Two linked lists exists for two divisions. Concatenate two lists.*/
+/*NAME: ADITYA GADE 	Class: SE-A(COMP)	Date of creation:22-08-2018		Last Updated: 28-08-19*/
 #include<iostream>
 #include<stdio.h>
 #include<string.h>
@@ -312,7 +323,7 @@ int main()
 		
 			case 1:
 				l1.delete_head();
-				l1.display();
+				//l1.display();
 				break;
 			case 2:
 				l1.delete_tail();
@@ -352,3 +363,176 @@ int main()
 	
 	return 0;
 }
+/*
+SAMPLE OUTPUT:
+ubuntu@DESKTOP-4FQXGZ1:~$ cd //mnt/z/DSA
+ubuntu@DESKTOP-4FQXGZ1://mnt/z/DSA$ g++ LinkedListPinnacle.cpp
+ubuntu@DESKTOP-4FQXGZ1://mnt/z/DSA$ ./a.out
+
+CREATE L1 :Enter the PRN:       123
+Enter the Name: Student one+
+Add more?(y/n)
+y
+Enter the PRN:  234
+Enter the Name: Student 2
++
+Add more?(y/n)
+y
+Enter the PRN:  456
+Enter the Name: student 3+
+Add more?(y/n)
+n
+Enter the Choice:
+1.Delete President
+2.Delete Secretary
+3.Insert President
+4.Insert Secretary
+5.Concatenate List
+6.Delete by value
+1
+
+After Deleting Head list
+NAME:
+Student 2
+
+PRN:234 Membership: President
+
+NAME:
+student 3
+PRN:456 Membership: Secretary
+
+The Total No of Students in the PINNACLE CLUB is: 2
+NAME:
+Student 2
+
+PRN:234 Membership: President
+
+NAME:
+student 3
+PRN:456 Membership: Secretary
+
+The Total No of Students in the PINNACLE CLUB is: 2
+Do you want to continue(Y/y):   y
+Enter the Choice:
+1.Delete President
+2.Delete Secretary
+3.Insert President
+4.Insert Secretary
+5.Concatenate List
+6.Delete by value
+2
+
+After Deleting Tail list
+NAME:
+Student 2
+
+PRN:234 Membership: President
+
+The Total No of Students in the PINNACLE CLUB is: 1
+NAME:
+Student 2
+
+PRN:234 Membership: President
+
+The Total No of Students in the PINNACLE CLUB is: 1
+Do you want to continue(Y/y):   y
+Enter the Choice:
+1.Delete President
+2.Delete Secretary
+3.Insert President
+4.Insert Secretary
+5.Concatenate List
+6.Delete by value
+3
+
+ENTER: 1.TO CREATE A NEW PRESIDENT.
+        2.CREATE ALREADY EXISTING MEMBER AS PRESIDENT
+1
+
+Enter PRN:      123
+
+Enter Name:     student1
++
+
+List after inserting president
+NAME:
+student1
+
+PRN:123 Membership: President
+
+NAME:
+Student 2
+
+PRN:234 Membership: Secretary
+
+The Total No of Students in the PINNACLE CLUB is: 2
+Do you want to continue(Y/y):   y
+Enter the Choice:
+1.Delete President
+2.Delete Secretary
+3.Insert President
+4.Insert Secretary
+5.Concatenate List
+6.Delete by value
+3
+
+ENTER: 1.TO CREATE A NEW PRESIDENT.
+        2.CREATE ALREADY EXISTING MEMBER AS PRESIDENT
+2
+
+Enter the name of member to be made as president:       thanos+
+OPERATION NOT SUCCESSFUL!
+List after inserting president
+NAME:
+student1
+
+PRN:123 Membership: President
+
+NAME:
+Student 2
+
+PRN:234 Membership: Secretary
+
+The Total No of Students in the PINNACLE CLUB is: 2
+Do you want to continue(Y/y):   y
+Enter the Choice:
+1.Delete President
+2.Delete Secretary
+3.Insert President
+4.Insert Secretary
+5.Concatenate List
+6.Delete by value
+5
+
+CREATE 2nd List:Enter the PRN:  987
+Enter the Name: bstudent +
+Add more?(y/n)
+y
+Enter the PRN:  345
+Enter the Name: student of b+
+Add more?(y/n)
+n
+
+Concatinating the LISTS........
+After concatenation list
+NAME:
+student1
+
+PRN:123 Membership: President
+
+NAME:
+Student 2
+
+PRN:234 Membership: Member
+
+NAME:
+bstudent
+PRN:987 Membership: Member
+
+NAME:
+student of b
+PRN:345 Membership: Secretary
+
+The Total No of Students in the PINNACLE CLUB is: 4
+Do you want to continue(Y/y):   n
+ubuntu@DESKTOP-4FQXGZ1://mnt/z/DSA$ ./a.out*/
