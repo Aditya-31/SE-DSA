@@ -1,3 +1,6 @@
+/*Write C++ program for storing binary number using doubly linked lists. Write functions-
+a) to compute 1‘s and 2‘s complement b) add two binary numbers.*/
+/*NAME: ADITYA GADE 	Class: SE-A(COMP)	Date of creation:22-08-2018		Last Updated: 27-08-19*/
 #include<iostream>
 #include<iomanip>
 using namespace std;
@@ -209,7 +212,8 @@ class dlink_list
 			}
 			return add;
 		}
-		dlink_list one()
+
+		static dlink_list one()
 		{
 			dlink_list o;
 			node *current;
@@ -245,10 +249,168 @@ class dlink_list
 };
 int main()
 {
-	dlink_list l1,l2;
+	dlink_list l1,l2,l3,l4,l5,oneList;
+	oneList= dlink_list :: one();//Because FUnction is Declared Static we dont need an object to call it 
+	char ch,yes;
+	cout<<"\nENTER BINARY NO 1:\t";
 	l1.create();
-	cout<<"\nENTERED BINARY NO IS:\t";
+	cout<<"\nENTER BINARY NO 2:\t";
 	l2.create();
-	cout<<"\nENTERED BINARY NO IS:\t";
+	do
+	{
+		cout<<"\nEnter the Choice From The Menu:\n1.Display 1st No.\n2.Display 2nd No.\n3.Ones Complement(1)";
+		cout<<"\n4.Ones Complement(2)\n5.Twos Complement(1)\n6.Twos Complement(2)"<<endl;
+		cin>>ch;
+		switch(ch)
+		{
+			case'1':
+					cout<<"FIRST NO.";
+					l1.display();
+					break;
+			case'2':
+					cout<<"SECOND NO.";
+					l2.display();
+					break;
+			case'3':
+					l3=l1.onesCompliment();
+					cout<<"FIRST NO.(ONEs)";
+					l3.display();
+					break;
+			case'4':
+					l4=l2.onesCompliment();
+					cout<<"SECOND NO.(ONEs)";
+					l4.display();
+					break;
+			
+			case'5':
+					l3=l1.onesCompliment();
+					l5=l3+oneList;//TWOs Compliment=ONEs Compliment+1
+					cout<<"FIRST NO.(TWOs)";
+					l5.display();
+					break;
+			case'6':
+					l4=l2.onesCompliment();
+					l5=l4+oneList;////TWOs Compliment=ONEs Compliment+1
+					cout<<"FIRST NO.(TWOs)";
+					l5.display();
+					break;
+			default:
+					cout<<"\nEnter Valid Choice"<<endl;
+					break;
+		}
+		cout<<"\nDo You Wish To Continue\?\?(Y/y)"<<endl;
+		cin>>yes;
+	}while(yes=='y'||yes=='Y');
 	return 0;
 }
+/*
+SAMPLE OUTPUT:
+ubuntu@DESKTOP-4FQXGZ1:~$ cd //mnt/z/DSA
+ubuntu@DESKTOP-4FQXGZ1://mnt/z/DSA$ g++ binary.cpp
+ubuntu@DESKTOP-4FQXGZ1://mnt/z/DSA$ ./a.out
+
+ENTER BINARY NO 1:
+Enter the Binary no
+(MSB->->->LSB)
+(-1 to end the no.)
+ENTER Bit:1
+ENTER Bit:0
+ENTER Bit:1
+ENTER Bit:0
+ENTER Bit:-1
+
+ENTER BINARY NO 2:
+Enter the Binary no
+(MSB->->->LSB)
+(-1 to end the no.)
+ENTER Bit:0
+ENTER Bit:1
+ENTER Bit:0
+ENTER Bit:1
+ENTER Bit:-1
+
+Enter the Choice From The Menu:
+1.Display 1st No.
+2.Display 2nd No.
+3.Ones Complement(1)
+4.Ones Complement(2)
+5.Twos Complement(1)
+6.Twos Complement(2)
+1
+FIRST NO. 1 0 1 0
+Total bits:4
+
+Do You Wish To Continue??(Y/y)
+y
+
+Enter the Choice From The Menu:
+1.Display 1st No.
+2.Display 2nd No.
+3.Ones Complement(1)
+4.Ones Complement(2)
+5.Twos Complement(1)
+6.Twos Complement(2)
+2
+SECOND NO. 0 1 0 1
+Total bits:4
+
+Do You Wish To Continue??(Y/y)
+y
+
+Enter the Choice From The Menu:
+1.Display 1st No.
+2.Display 2nd No.
+3.Ones Complement(1)
+4.Ones Complement(2)
+5.Twos Complement(1)
+6.Twos Complement(2)
+3
+FIRST NO.(ONEs) 0 1 0 1
+Total bits:4
+
+Do You Wish To Continue??(Y/y)
+y
+
+Enter the Choice From The Menu:
+1.Display 1st No.
+2.Display 2nd No.
+3.Ones Complement(1)
+4.Ones Complement(2)
+5.Twos Complement(1)
+6.Twos Complement(2)
+4
+SECOND NO.(ONEs) 1 0 1 0
+Total bits:4
+
+Do You Wish To Continue??(Y/y)
+y
+
+Enter the Choice From The Menu:
+1.Display 1st No.
+2.Display 2nd No.
+3.Ones Complement(1)
+4.Ones Complement(2)
+5.Twos Complement(1)
+6.Twos Complement(2)
+5
+FIRST NO.(TWOs) 0 1 1 0
+Total bits:4
+
+Do You Wish To Continue??(Y/y)
+y
+
+Enter the Choice From The Menu:
+1.Display 1st No.
+2.Display 2nd No.
+3.Ones Complement(1)
+4.Ones Complement(2)
+5.Twos Complement(1)
+6.Twos Complement(2)
+6
+FIRST NO.(TWOs) 1 0 1 1
+Total bits:4
+
+Do You Wish To Continue??(Y/y)
+n
+ubuntu@DESKTOP-4FQXGZ1://mnt/z/DSA$ 
+*/
