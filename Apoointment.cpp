@@ -75,7 +75,7 @@ class Schedule
            node *temp;
            
            cout<<"\n\n\t ****Appointment Schdule****";
-           cout<<"\n\n\t Srno.\tStart\tEnd\tMin_Dur\tMax_Dur\tStatus";        
+           cout<<"\n\n\t Srno.\tStart\tEnd\tStatus";        
            
            temp = head;
            while(temp != NULL)
@@ -232,5 +232,147 @@ int main()
 }
 
 
+/*
+OUTPUT:
+unix@unix-dx2480-MT:~$ cd SEA19
+unix@unix-dx2480-MT:~/SEA19$ g++ Appointment.cpp
+unix@unix-dx2480-MT:~/SEA19$ ./a.out
 
+
+ *** Menu ***
+ 1. Create Appointment Schedule
+ 2. Display Free Slots
+ 3. Book an Appointment
+ 4. Cancel an Appointment
+ 5. Sort slots based on Time
+
+	 Enter your choice: 1
+
+
+	 How many Appointment Slots: 3
+
+
+	 Enter Start Time: 9
+
+	 Enter End Time: 10
+
+
+	 Enter Start Time: 10
+
+	 Enter End Time: 11
+
+
+	 Enter Start Time: 11
+
+	 Enter End Time: 12
+
+
+	 Do you want to continue? (y/n) : y
+
+
+ *** Menu ***
+ 1. Create Appointment Schedule
+ 2. Display Free Slots
+ 3. Book an Appointment
+ 4. Cancel an Appointment
+ 5. Sort slots based on Time
+
+	 Enter your choice: 2
+
+
+	 ****Appointment Schdule****
+
+	 Srno.	Start	End	Status
+
+	 1	 9	 10	--Free--
+
+	 2	 10	 11	--Free--
+
+	 3	 11	 12	--Free--
+
+	 Do you want to continue? (y/n) : y
+
+
+ *** Menu ***
+ 1. Create Appointment Schedule
+ 2. Display Free Slots
+ 3. Book an Appointment
+ 4. Cancel an Appointment
+ 5. Sort slots based on Time
+
+	 Enter your choice: 3
+
+
+	 Please enter Appointment time: 10
+
+
+	 Appointment Slot is Booked!!!
+
+	 Do you want to continue? (y/n) : y
+
+
+ *** Menu ***
+ 1. Create Appointment Schedule
+ 2. Display Free Slots
+ 3. Book an Appointment
+ 4. Cancel an Appointment
+ 5. Sort slots based on Time
+
+	 Enter your choice: 2
+
+
+	 ****Appointment Schdule****
+
+	 Srno.	Start	End	Status
+
+	 1	 9	 10	--Free--
+
+	 2	 10	 11	-Booked-
+
+	 3	 11	 12	--Free--
+
+	 Do you want to continue? (y/n) : y
+
+
+ *** Menu ***
+ 1. Create Appointment Schedule
+ 2. Display Free Slots
+ 3. Book an Appointment
+ 4. Cancel an Appointment
+ 5. Sort slots based on Time
+
+	 Enter your choice: 4
+
+
+	 Please enter Appointment time to Cancel: 10
+
+
+	 Your Appointment Slot is Canceled!!!
+
+	 Do you want to continue? (y/n) : y
+
+
+ *** Menu ***
+ 1. Create Appointment Schedule
+ 2. Display Free Slots
+ 3. Book an Appointment
+ 4. Cancel an Appointment
+ 5. Sort slots based on Time
+
+	 Enter your choice: 2
+
+
+	 ****Appointment Schdule****
+
+	 Srno.	Start	End	Status
+
+	 1	 9	 10	--Free--
+
+	 2	 10	 11	--Free--
+
+	 3	 11	 12	--Free--
+
+	 Do you want to continue? (y/n) : n
+unix@unix-dx2480-MT:~/SEA19$ 
+*/
 
