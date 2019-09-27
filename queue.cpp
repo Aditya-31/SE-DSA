@@ -19,19 +19,20 @@ class Queue
 			front=rear=-1;
 			size=n;
 		}
-		int isFull(){return rear==size-1;}
+		int isFull(){return ((front)&&(rear==size-1)&&(front==(rear+1)%size));}
 		int isEmpty(){return front==rear;}
-		void insertAtRear(char *a)
+		void insertAtRear(char a[])
 		{
 			if(!isFull())
 				strcpy(arr[++rear].task,a);
+				//cout<<arr[rear];
 			else
 				cout<<"\nTask can't be inserted (QUEUE is FULL) "<<endl;
 		}
 		void deleteAtFront()
 		{
 			if(!isEmpty())
-				cout<<arr[front--].task<<endl;
+				cout<<arr[++front].task<<endl;
 			else
 				cout<<"\nDeletion isn't possible (QUEUE is EMPTY)"<<endl;
 		}
@@ -48,7 +49,7 @@ class Queue
 				while(temp!=rear+1)
 				{
 					cout<<arr[temp++].task;
-					display(temp);
+					//display(temp);
 				}
 				return;
 			}
@@ -107,9 +108,93 @@ int main()
 			  break;
 		 
 		 case '4':
-		 		cout<<"\n Exit";
+		 		cout<<"\n Exit"<<endl;
 		 		break;
 		}
 	}while(ch!='4');		
 	return 0;
 }
+/*
+OUTPUT:
+unix@unix-dx2480-MT:~$ cd SEA19
+unix@unix-dx2480-MT:~/SEA19$ g++ queue.cpp
+unix@unix-dx2480-MT:~/SEA19$ ./a.out
+Enter the size of required Queue:	5
+
+ 1. Insert task
+ 2.Delete Task
+ 3.Display To-Do List
+ 4.Exit
+ Enter your choice:1
+
+ Enter Task:Task1+
+
+ 1. Insert task
+ 2.Delete Task
+ 3.Display To-Do List
+ 4.Exit
+ Enter your choice:1
+
+ Enter Task:Task2+
+
+ 1. Insert task
+ 2.Delete Task
+ 3.Display To-Do List
+ 4.Exit
+ Enter your choice:1
+
+ Enter Task:Task3+
+
+ 1. Insert task
+ 2.Delete Task
+ 3.Display To-Do List
+ 4.Exit
+ Enter your choice:3
+
+ Queue contains:
+Task1
+Task2
+Task3
+ 1. Insert task
+ 2.Delete Task
+ 3.Display To-Do List
+ 4.Exit
+ Enter your choice:2
+
+ Deleted Task:
+Task1
+
+ 1. Insert task
+ 2.Delete Task
+ 3.Display To-Do List
+ 4.Exit
+ Enter your choice:2
+
+ Deleted Task:
+Task2
+
+ 1. Insert task
+ 2.Delete Task
+ 3.Display To-Do List
+ 4.Exit
+ Enter your choice:2
+
+ Deleted Task:
+Task3
+
+ 1. Insert task
+ 2.Delete Task
+ 3.Display To-Do List
+ 4.Exit
+ Enter your choice:2
+
+ Queue is underflow
+ 1. Insert task
+ 2.Delete Task
+ 3.Display To-Do List
+ 4.Exit
+ Enter your choice:4
+
+ Exit
+ unix@unix-dx2480-MT:~/SEA19$ 
+*/
